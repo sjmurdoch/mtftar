@@ -95,13 +95,13 @@ int mtfscan_next(struct mtf_stream *s)
 	s->flbread = 0;
 	return 1;
 }
-unsigned char *mtfscan_string(struct mtf_stream *s, struct mtf_tape_pos q, int sz)
+char *mtfscan_string(struct mtf_stream *s, struct mtf_tape_pos q, int sz)
 {
 	unsigned int i;
 	unsigned int n;
 	unsigned int cx, cx2;
 	unsigned char *uc;
-	unsigned char *out, *p;
+	char *out, *p;
 
 #ifdef DEBUG
 	fprintf(stderr, "q.pos=%d, q.size=%d type=%d\n", q.pos, q.size, s->stringtype);
