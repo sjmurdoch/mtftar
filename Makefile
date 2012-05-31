@@ -1,8 +1,10 @@
-CFLAGS += -Wall -O9 -s -D_GNU_SOURCE
+CFLAGS += -Wall -O9 -D_GNU_SOURCE
 
 #test: mtftar
 #	./mtftar -X "`./mtftar -s1 -L -f READY.bkf`" -p -f READY.bkf d:/inetpub/ | tar tvf -
 
+all: mtftar
+	strip $<
 mtftar: mtftar.o mtfscan.o mtfheader.o mtfstream.o tarout.o util.o
 mtftar.o: mtftar.c mtf.h tar.h
 mtfstream.o: mtfstream.c mtf.h
