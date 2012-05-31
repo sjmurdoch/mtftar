@@ -1,4 +1,6 @@
+#ifndef __APPLE__
 #include <features.h>
+#endif
 
 #include "mtf.h"
 #include "tar.h"
@@ -11,6 +13,11 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <ctype.h>
+
+/* MacOS X enables large files by default, and does not define O_LARGEFILE */
+#ifndef O_LARGEFILE
+#define O_LARGEFILE 0
+#endif
 
 static void usage(int e)
 {

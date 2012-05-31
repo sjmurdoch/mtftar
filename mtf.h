@@ -2,9 +2,16 @@
 #define __mtf_h
 
 /* for off_t */
+#ifndef __APPLE__
 #include <features.h>
+#endif
 #include <sys/types.h>
 #include <unistd.h>
+
+#ifdef __APPLE__
+#define off64_t off_t
+#define lseek64(fd, offset, whence) lseek(fd, offset, whence)
+#endif
 
 /* for time_t */
 #include <time.h>
