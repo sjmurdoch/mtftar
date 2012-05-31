@@ -1,5 +1,7 @@
 #include <sys/ioctl.h>
+#ifndef __APPLE__
 #include <sys/mtio.h>
+#endif
 #include <stdlib.h>
 #include <errno.h>
 #include <stdio.h>
@@ -8,11 +10,17 @@
 
 int mtfscan_init(struct mtf_stream *s, int fd)
 {
+#ifndef __APPLE__
 	struct mtget mg;
+#endif
 
 	s->fd = fd;
 	s->abspos = 0;
 
+#ifdef __APPLE__
+	s->blksize = 0; /* no blocks */
+	errno = 0;
+#else
 	if (ioctl(fd, MTIOCGET, &mg) == -1) {
 		if (errno == ENOTTY) {
 			s->blksize = 0; /* no blocks */
@@ -23,6 +31,7 @@ int mtfscan_init(struct mtf_stream *s, int fd)
 	} else {
 		s->blksize = (mg.mt_dsreg & MT_ST_BLKSIZE_MASK) >> MT_ST_BLKSIZE_SHIFT;
 	}
+#endif
 
 	s->ready = 0;
 	s->flbsize = s->flbread = 0;
