@@ -1,4 +1,4 @@
-CFLAGS += -Wall -O9 -D_GNU_SOURCE -fno-strict-aliasing
+CFLAGS += -Wall -D_GNU_SOURCE -fno-strict-aliasing
 
 #test: mtftar
 #	./mtftar -X "`./mtftar -s1 -L -f READY.bkf`" -p -f READY.bkf d:/inetpub/ | tar tvf -
