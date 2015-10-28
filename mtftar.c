@@ -21,14 +21,14 @@
 
 static void usage(int e)
 {
-	fprintf(stderr, "Usage: mtftar [-v] [-p] [-s setno] [patterns...] < backup.btf | tar xvf -\n");
-	fprintf(stderr, "       mtftar [-v] [-p] [-s setno] -f backup.btf [patterns...] | tar xvf -\n");
-	fprintf(stderr, "       mtftar [-v] [-p] [-s setno] -f backup.btf -o output.tar [patterns...]\n");
-	fprintf(stderr, "       mtftar [-v] [-p] [-s setno] -o output.tar [patterns...] < backup.btf\n");
-	fprintf(stderr, "       mtftar -l [-v] [-s setno] < backup.btf\n");
-	fprintf(stderr, "       mtftar -l [-v] [-s setno] -f backup.btf\n");
-	fprintf(stderr, "       mtftar -L [-v] [-s setno] < backup.btf\n");
-	fprintf(stderr, "       mtftar -L [-v] [-s setno] -f backup.btf\n");
+	fprintf(stderr, "Usage: mtftar [-v] [-p] [-s setno] [patterns...] < backup.bkf | tar xvf -\n");
+	fprintf(stderr, "       mtftar [-v] [-p] [-s setno] -f backup.bkf [patterns...] | tar xvf -\n");
+	fprintf(stderr, "       mtftar [-v] [-p] [-s setno] -f backup.bkf -o output.tar [patterns...]\n");
+	fprintf(stderr, "       mtftar [-v] [-p] [-s setno] -o output.tar [patterns...] < backup.bkf\n");
+	fprintf(stderr, "       mtftar -l [-v] [-s setno] < backup.bkf\n");
+	fprintf(stderr, "       mtftar -l [-v] [-s setno] -f backup.bkf\n");
+	fprintf(stderr, "       mtftar -L [-v] [-s setno] < backup.bkf\n");
+	fprintf(stderr, "       mtftar -L [-v] [-s setno] -f backup.bkf\n");
 	exit(e);
 }
 
