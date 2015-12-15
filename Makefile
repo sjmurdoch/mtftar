@@ -1,5 +1,7 @@
-CFLAGS += -Wall -D_GNU_SOURCE -fno-strict-aliasing -arch i386 -mmacosx-version-min=10.4
-LDFLAGS += -Wall -D_GNU_SOURCE -fno-strict-aliasing -arch i386 -mmacosx-version-min=10.4
+CFLAGS += -Wall -D_GNU_SOURCE -fno-strict-aliasing
+LDFLAGS += -Wall -D_GNU_SOURCE -fno-strict-aliasing
+#CFLAGS += -arch i386 -mmacosx-version-min=10.4
+#LDFLAGS += -arch i386 -mmacosx-version-min=10.4
 
 #test: mtftar
 #	./mtftar -X "`./mtftar -s1 -L -f READY.bkf`" -p -f READY.bkf d:/inetpub/ | tar tvf -
