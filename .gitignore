@@ -1,2 +1,10 @@
 *.o
 mtftar
+
+# Eclipse
+.settings
+.cproject
+.project
+
+# KDevelop
+*.kdev4
